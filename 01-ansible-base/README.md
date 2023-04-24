@@ -22,7 +22,7 @@
 8. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
 ![img](https://github.com/juls-blekh/-mnt-homeworks/blob/master/01-ansible-base/img/5.png)
 9. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.
-![img](https://github.com/juls-blekh/-mnt-homeworks/blob/master/01-ansible-base/img/6.png)
+Так как `control node` - это localhost, то плагин для подключения - local.
 10. В `prod.yml` добавьте новую группу хостов с именем  `local`, в ней разместите localhost с необходимым типом подключения.
 11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
 ![img](https://github.com/juls-blekh/-mnt-homeworks/blob/master/01-ansible-base/img/7.png)
