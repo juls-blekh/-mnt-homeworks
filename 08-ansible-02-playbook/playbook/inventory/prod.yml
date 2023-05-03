@@ -2,5 +2,6 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: 192.168.88.205
+      ansible_host: 192.168.88.192
       ansible_ssh_pass: 123456
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'

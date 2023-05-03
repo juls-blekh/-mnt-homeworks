@@ -51,10 +51,9 @@
         name: https://packages.timber.io/vector/0.29.1/vector-0.29.1-1.{{ ansible_architecture }}.rpm
         state: present
       notify: Restart vector service
-    - name: Configure Vector 
+    - name: Configure Vector
       file:
-        #path: "{{ vector_config_dir }}"
-        path: /var/lib/vector/vector_config"
+        path: "{{ vector_config_dir }}"
         state: directory
         mode: 0644
       become: true
@@ -62,8 +61,7 @@
       ansible.builtin.template:
         src: vector.yml.j2
         mode: 0644
-        #dest: "{{ vector_config_dir }}/vector.yml"
-        dest: /var/lib/vector/vector_config/vector.yml
+        dest: "{{ vector_config_dir }}/vector.yml"
       become: true
       notify: Restart vector service
     - name: Configure Service
