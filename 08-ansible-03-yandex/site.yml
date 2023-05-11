@@ -18,13 +18,13 @@
       ansible.builtin.service:
         name: nginx
         state: restarted
-  pre_tasks:    
+  pre_tasks:
     - name: Install epel-release | Install Nginx
       become: true
       yum:
         name: epel-release
         state: present
-    - name: Install Nginx | Install Nginx 
+    - name: Install Nginx | Install Nginx
       become: true
       yum:
         name: nginx

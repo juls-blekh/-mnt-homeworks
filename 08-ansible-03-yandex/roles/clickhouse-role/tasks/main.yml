@@ -1,6 +1,7 @@
 ---
 # tasks file for clickhouse-role
-- block:
+- name: Get packages
+  block:
     - name: Get clickhouse distrib
       ansible.builtin.get_url:
         url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
@@ -39,7 +40,7 @@
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
   become: true
-# Принудительное использование handlers 
+# Принудительное использование handlers
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
 # Задержка после рестарта сервера, чтобы успел запустится
@@ -52,7 +53,7 @@
   register: create_db
   failed_when: create_db.rc != 0 and create_db.rc !=82
   changed_when: create_db.rc == 0
- #Создание таблицы для хранения логов одной строкой
+# Создание таблицы для хранения логов одной строкой
 - name: Create table for logs
   ansible.builtin.command: "clickhouse-client -q
                         'CREATE TABLE IF NOT EXISTS  logs.vector_internal_logs (
@@ -61,3 +62,5 @@
                         ENGINE = MergeTree()
                         ORDER BY tuple();'" #don't need sorting
   register: create_table
+  changed_when: false
+  
