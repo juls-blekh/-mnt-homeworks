@@ -26,6 +26,8 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 ![img.png](img/workflows.png)
+![img.png](img/workflow-bug.png)
+![img.png](img/workflow-others.png)
 
 **Что нужно сделать**
 
