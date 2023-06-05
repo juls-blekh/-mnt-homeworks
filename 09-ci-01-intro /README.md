@@ -26,8 +26,10 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 ![img.png](img/workflows.png)
-![img.png](img/workflow-bug.png)
-![img.png](img/workflow-others.png)
+Схема бизнес-процессов для bug:
+![img.png](img/workflow-bug-2.png)
+Схема бизнес-процессов для остальных типов задач:
+![img.png](img/workflow-others-2.png)
 
 **Что нужно сделать**
 
